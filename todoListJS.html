@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>TODO list</title>
+      <style>
+         #todoList {
+            margin: auto;
+            width: 22%;
+            text-align: center;
+            /* border: 2px solid crimson; */
+         }
+
+         #todoOl {
+            margin: auto;
+            width: 50%;
+            text-align: center;
+            list-style: none;
+         }
+
+         .forLi {
+            border: 2px solid rgb(114, 173, 250);
+            padding: 5px;
+            margin-top: 4px;
+         }
+
+         .togglers {
+            text-align: center;
+         }
+
+         #header {
+            padding: 20px;
+            background-color: rgb(67, 67, 252);
+            color: white;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="todoList">
+         <!-- * заголовок -->
+         <h1 id="header">TODO list</h1>
+
+         <b>Enter text in the form below to create task</b><br />
+
+         <!-- * взять название -->
+         <input type="text" id="input" autocomplete="off" />
+         <button id="submit">add to list</button>
+         <button id="clearButton">clear</button>
+      </div>
+
+      <!--* пересключатели -->
+      <div class="togglers">
+         <button id="showNum">show numbers</button>
+      </div>
+
+      <!-- * список -->
+      <ol id="todoOl"></ol>
+
+      <!--! Java Script  -->
+      <script src="./todoListJS.js"></script>
+   </body>
+</html>
