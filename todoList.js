@@ -43,3 +43,8 @@ submit.addEventListener("click", todoApp);
 clear.addEventListener("click", clearList);
 
 showNum.addEventListener("click", toggleNum);
+
+// _________________________________________________
+function showAlert() {
+   alert(j);
+}
