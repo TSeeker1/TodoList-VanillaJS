@@ -51,3 +51,4 @@ function showAlert() {
 
 //* My balls hurt real hard
 // * keep grinding
+// * i finnaly ended learning git. At simple level ofc
