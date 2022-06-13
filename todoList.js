@@ -48,3 +48,6 @@ showNum.addEventListener("click", toggleNum);
 function showAlert() {
    alert(j);
 }
+
+//* My balls hurt real hard
+// * keep grinding
