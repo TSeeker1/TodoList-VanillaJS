@@ -38,6 +38,7 @@ function todoApp() {
    input.value = "";
 }
 
+// * input by enter key
 function keyPressed(event) {
    if (event.key === "Enter") {
       event.preventDefault();
