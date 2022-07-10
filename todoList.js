@@ -11,7 +11,7 @@ const showNum = document.getElementById("showNum");
 function addList(value) {
    // * creating li element
    let li = document.createElement("li");
-   li.innerHTML = " " + value;
+   li.textContent = " " + value;
    li.classList.add("forLi");
 
    // * add li to the list
@@ -20,9 +20,12 @@ function addList(value) {
    // *creating delete button
    let btn = createCertainDeleteBtn();
 
-   btn.addEventListener("click", clearTask);
+   // * craeting complete button
+   let completeTaskBtn = createComleteTaskBtn();
 
+   // * adding buttons
    li.append(btn);
+   li.append(completeTaskBtn);
 }
 
 // * принять название для задачи
@@ -33,6 +36,13 @@ function todoApp() {
    addList(str);
 
    input.value = "";
+}
+
+function keyPressed(event) {
+   if (event.key === "Enter") {
+      event.preventDefault();
+      submit.click();
+   }
 }
 
 // * очистить список
@@ -54,8 +64,30 @@ function createCertainDeleteBtn() {
    let btn = document.createElement("button");
    btn.innerHTML = "X";
    btn.classList.add("deleteCertainBtn");
+   btn.addEventListener("click", clearTask);
 
    return btn;
+}
+
+// * creating complete task button
+function createComleteTaskBtn() {
+   let input = document.createElement("input");
+   input.type = "checkbox";
+   input.classList.add("completeBtn");
+
+   // * checks if checkbox is pressed or not
+   input.addEventListener("click", function (event) {
+      let target = event.target;
+      let li = target.closest("li");
+
+      if (input.checked == true) {
+         li.classList.add("completed");
+      } else {
+         li.classList.remove("completed");
+      }
+   });
+
+   return input;
 }
 
 //* отдельная кнопка для очиски
@@ -68,6 +100,7 @@ function clearTask(event) {
 }
 
 submit.addEventListener("click", todoApp);
+input.addEventListener("keydown", keyPressed);
 clear.addEventListener("click", clearList);
 
 showNum.addEventListener("click", toggleNum);
